@@ -13,9 +13,7 @@ export const KPI = ({ name, price, change }: KPIProps) => {
     >
       <h2 className="text-xl font-semibold">{name}</h2>
       <p className="text-2xl font-bold">${price.toLocaleString()}</p>
-      <p
-        className={`text-sm ${change >= 0 ? "green-price" : "red-price"}`}
-      >
+      <p className={`text-sm ${change >= 0 ? "green-price" : "red-price"}`}>
         {change >= 0 ? "+" : ""}
         {change.toFixed(2)}%
       </p>
