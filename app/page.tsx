@@ -74,9 +74,10 @@ export default function DashboardPage() {
 
   // components
 
-  if (isLoading) return <div className="p-8">Cargando criptos...</div>;
+  if (isLoading)
+    return <div className="p-8 background-purple bg-x2dark">Cargando criptos...</div>;
   if (error)
-    return <div className="p-8 text-red-500">Error al cargar datos</div>;
+    return <div className="p-8 text-red-500 background-purple">Error al cargar datos</div>;
 
   return (
     <div className="p-8 space-y-6 background-purple">
