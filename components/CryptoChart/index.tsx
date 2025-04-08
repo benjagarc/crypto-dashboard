@@ -19,8 +19,6 @@ export const CryptoChart = ({ data }: { data: any }) => {
     price,
   }));
 
-  console.log(data);
-
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.97 }}
