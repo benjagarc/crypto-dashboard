@@ -25,13 +25,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.background-ligth {
+.background-purple {
   background: radial-gradient(
     circle at 50% -3.03%,
     #9b4dff 0%,
     #6f2cf2 50%,
     #2b1a6a 100%
   );
+  min-height: 100vh;
 }
 
 .bg-light {
