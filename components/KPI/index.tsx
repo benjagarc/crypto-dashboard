@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { KPIProps } from "./interface";
+import { memo } from "react";
 
 export const KPI = ({ name, price, change }: KPIProps) => {
   return (
@@ -21,4 +22,4 @@ export const KPI = ({ name, price, change }: KPIProps) => {
   );
 };
 
-export default KPI;
+export default memo(KPI);
