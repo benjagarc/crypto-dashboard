@@ -12,6 +12,7 @@ import {
   typePriceRange,
 } from "@/components/Filters/interface";
 import { useState } from "react";
+import SearchBar from "@/components/SearchBar";
 
 export default function DashboardPage() {
   const {
@@ -59,6 +60,18 @@ export default function DashboardPage() {
     setFilteredCoins(() => filtered);
   };
 
+  const handleSearch = (term: string) => {
+    if (term === "") {
+      setFilteredCoins(coins);
+    } else {
+      setFilteredCoins(
+        coins.filter((coin: CoinElementInterface) =>
+          coin.name.toLowerCase().includes(term.toLowerCase())
+        )
+      );
+    }
+  };
+
   // components
 
   if (isLoading) return <div className="p-8">Cargando criptos...</div>;
@@ -67,12 +80,13 @@ export default function DashboardPage() {
 
   return (
     <div className="p-8 space-y-6 background-ligth">
-      <h1 className="text-3xl font-bold">Dashboard de Criptomonedas</h1>
+      <h1 className="text-3xl font-bold">Dashboard de Cryptos</h1>
       <Filters
         onFilter={(price, range) => {
           getFilterInformation(price, range);
         }}
       />
+      <SearchBar onSearch={handleSearch} />
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {filteredCoins.slice(0, 3).map((coin: CoinElementInterface) => (
