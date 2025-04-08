@@ -56,7 +56,7 @@ export default function DashboardPage() {
       filtered = changesRages[changeRange];
     }
 
-    setFilteredCoins((_) => filtered);
+    setFilteredCoins(() => filtered);
   };
 
   // components
