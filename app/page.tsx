@@ -80,7 +80,7 @@ export default function DashboardPage() {
 
   return (
     <div className="p-8 space-y-6 background-purple">
-      <h1 className="text-3xl font-bold">Dashboard de Cryptos</h1>
+      <h1 className="text-3xl font-bold">Crypto Dashboard </h1>
       <Filters
         onFilter={(price, range) => {
           getFilterInformation(price, range);
