@@ -13,7 +13,7 @@ export const Filters = ({ onFilter }: FiltersProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-4 mb-4">
+    <form onSubmit={handleSubmit} className="flex flex-wrap gap-4 mb-4">
       <div>
         <label htmlFor="priceRange" className="block">
           Price
