@@ -22,7 +22,7 @@ export const Filters = ({ onFilter }: FiltersProps) => {
           id="priceRange"
           value={priceRange}
           onChange={(e) => setPriceRange(() => e.target.value)}
-          className="border p-2 rounded"
+          className="border p-2 rounded bg-x2dark"
         >
           <option value="">Select a range</option>
           <option value="low">Low</option>
@@ -39,7 +39,7 @@ export const Filters = ({ onFilter }: FiltersProps) => {
           id="changeRange"
           value={changeRange}
           onChange={(e) => setChangeRange(() => e.target.value)}
-          className="border p-2 rounded"
+          className="border p-2 rounded bg-x2dark"
         >
           <option value="">Select a range</option>
           <option value="positive">Positive</option>

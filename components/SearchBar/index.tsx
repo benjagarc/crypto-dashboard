@@ -17,7 +17,7 @@ export const SearchBar = ({ onSearch }: SearchBarProps)  => {
         type="text"
         value={searchTerm}
         onChange={handleChange}
-        className="p-2 border rounded w-full"
+        className="p-2 border rounded w-full bg-x2dark"
         placeholder="Search a  Crypto..."
       />
     </div>
