@@ -10,6 +10,7 @@ import {
 } from "recharts";
 import { motion } from "framer-motion";
 import { CustomTooltip } from "./Tooltip";
+import { memo } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const CryptoChart = ({ data }: { data: any }) => {
@@ -50,4 +51,4 @@ export const CryptoChart = ({ data }: { data: any }) => {
   );
 };
 
-export default CryptoChart;
+export default memo(CryptoChart);
