@@ -12,7 +12,7 @@ export const CryptoTable = ({ coins }: { coins: any[] }) => {
       transition={{ duration: 0.4 }}
       className="overflow-auto bg-x2dark rounded-2xl shadow"
     >
-      <table className="min-w-full text-left">
+      <table className="min-w-full text-left max-sm:min-w-[500px]">
         <thead>
           <tr className="border-b">
             <th className="p-4">#</th>
@@ -23,10 +23,7 @@ export const CryptoTable = ({ coins }: { coins: any[] }) => {
         </thead>
         <tbody>
           {coins.map((coin, index) => (
-            <tr
-              key={coin.id}
-              className="border-b transition"
-            >
+            <tr key={coin.id} className="border-b transition">
               <td className="p-4">{index + 1}</td>
               <td className="flex items-center gap-2">
                 <img src={coin.image} alt={coin.name} className="w-5 h-5" />
