@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const CryptoTable = ({ coins }: { coins: any[] }) => {
@@ -26,7 +27,13 @@ export const CryptoTable = ({ coins }: { coins: any[] }) => {
             <tr key={coin.id} className="border-b transition">
               <td className="p-4">{index + 1}</td>
               <td className="flex items-center gap-2">
-                <img src={coin.image} alt={coin.name} className="w-5 h-5" />
+                <Image
+                  src={coin.image}
+                  alt={coin.name}
+                  width={20}
+                  height={20}
+                  className="w-5 h-5"
+                />
                 {coin.name}
               </td>
               <td>${coin.current_price.toLocaleString()}</td>
