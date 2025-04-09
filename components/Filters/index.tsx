@@ -13,8 +13,8 @@ export const Filters = ({ onFilter }: FiltersProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-wrap gap-4 mb-4">
-      <div>
+    <form onSubmit={handleSubmit} className="flex flex-wrap gap-4 mb-4 items-end max-sm:justify-between">
+      <div className="max-sm:w-4/9">
         <label htmlFor="priceRange" className="block">
           Price
         </label>
@@ -22,7 +22,7 @@ export const Filters = ({ onFilter }: FiltersProps) => {
           id="priceRange"
           value={priceRange}
           onChange={(e) => setPriceRange(() => e.target.value)}
-          className="border p-2 rounded bg-x2dark"
+          className="border bg-x2dark h-10 px-4 py-2 rounded-md text-sm max-sm: w-full" 
         >
           <option value="">Select a range</option>
           <option value="low">Low</option>
@@ -31,7 +31,7 @@ export const Filters = ({ onFilter }: FiltersProps) => {
         </select>
       </div>
 
-      <div>
+      <div className="max-sm:w-4/9">
         <label htmlFor="changeRange" className="block">
           Change 24h
         </label>
@@ -39,7 +39,7 @@ export const Filters = ({ onFilter }: FiltersProps) => {
           id="changeRange"
           value={changeRange}
           onChange={(e) => setChangeRange(() => e.target.value)}
-          className="border p-2 rounded bg-x2dark"
+          className="border bg-x2dark h-10 px-4 py-2 rounded-md text-sm max-sm: w-full" 
         >
           <option value="">Select a range</option>
           <option value="positive">Positive</option>
@@ -47,7 +47,7 @@ export const Filters = ({ onFilter }: FiltersProps) => {
         </select>
       </div>
 
-      <button type="submit" className="p-2 bg-blue-500 text-white rounded">
+      <button type="submit" className="h-10 px-4 py-2 rounded-md text-sm bg-blue-500 text-white cursor-pointer max-sm:w-full">
         Filter
       </button>
     </form>
