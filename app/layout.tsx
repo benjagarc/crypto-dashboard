@@ -6,8 +6,22 @@ import Providers from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Crypto Dashboard",
-  description: "Dashboard de criptomonedas en tiempo real",
+  title: "Crypto Dashboard | Track Cryptocurrency Prices",
+  description:
+    "Monitor real-time prices, trends, and market changes of popular cryptocurrencies.",
+  keywords: [
+    "cryptocurrency",
+    "dashboard",
+    "bitcoin",
+    "ethereum",
+    "crypto prices",
+    "market trends",
+  ],
+  authors: [{ name: "Benjamín Jair García Romero" }],
+  creator: "Benjamín Jair",
+  icons: {
+    icon: "/favicon.png", // También puedes usar .png o .svg si prefieres
+  },
 };
 
 export default function RootLayout({
