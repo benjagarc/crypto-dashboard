@@ -47,7 +47,7 @@ export const Filters = ({ onFilter }: FiltersProps) => {
         </select>
       </div>
 
-      <button type="submit" className="h-10 px-4 py-2 rounded-md text-sm bg-indigo-400 hover:bg-indigo-500 text-white cursor-pointer max-sm:w-full">
+      <button type="submit" className="h-10 px-4 py-2 rounded-md text-sm bg-rose-400 hover:bg-rose-500 text-black cursor-pointer max-sm:w-full">
         Filter
       </button>
     </form>
