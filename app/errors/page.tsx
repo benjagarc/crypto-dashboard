@@ -42,7 +42,7 @@ export default function pageErrors() {
     const paymentData = {
       orderId: "12345",
       paymentMethod: "card",
-      amount: 100.88,
+      amount: 50.88,
       tipAmount: 0.0,
       cardToken: data.token,
       last4: data.last4,
@@ -85,7 +85,7 @@ export default function pageErrors() {
         showModal({
           title,
           content: <p>{description}</p>,
-          variant: status === "processing" ? "warning" : "success",
+          variant: status === "processing" ? "process" : "success",
         });
       }
     } catch (e) {
