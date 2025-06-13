@@ -1,12 +1,10 @@
 "use client";
 
 import { useModal } from "@/components/context/ModalContext/index";
-import { useState } from "react";
 import { errorCases, successCases } from "./cases";
 import { ErrorCode, SuccesCode } from "./interface";
 
 export default function pageErrors() {
-  const [isOpen, setIsOpen] = useState(false);
   const { showModal } = useModal();
 
   const cardData = {
@@ -43,7 +41,7 @@ export default function pageErrors() {
     const paymentData = {
       orderId: "12345",
       paymentMethod: "card",
-      amount: 999.99,
+      amount: 100.88,
       tipAmount: 0.0,
       cardToken: data.token,
       last4: data.last4,
