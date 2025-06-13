@@ -1,4 +1,3 @@
-// src/components/Modal.jsx
 import React, { FC } from "react";
 import { ModalProps } from "./interface";
 import { variantStyles } from "./variant";
