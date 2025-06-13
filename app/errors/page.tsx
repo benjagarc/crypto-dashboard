@@ -1,6 +1,7 @@
 "use client";
 
 import { useModal } from "@/components/context/ModalContext/index";
+import { Loader } from "@/components/Loader/index";
 import { errorCases, successCases } from "./cases";
 import { ErrorCode, SuccesCode } from "./interface";
 
@@ -94,7 +95,7 @@ export default function pageErrors() {
 
   return (
     <>
-      <h1>Error</h1>
+      {/* <Loader /> */}
       <button onClick={() => submitInformation()}>Send information</button>
     </>
   );
