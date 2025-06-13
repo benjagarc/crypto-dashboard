@@ -113,3 +113,34 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #7c3aed; /* purple-600 para hover */
 }
+
+
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+@keyframes pulse-check {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes info-fade-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-error {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-success {
+  animation: pulse-check 0.4s ease-out;
+}
+
+.animate-info {
+  animation: info-fade-in 0.4s ease-out;
+}
