@@ -4,7 +4,7 @@ import Modal from "@/components/Modal/index";
 import { useState } from "react";
 
 export default function pageErrors() {
-  const [isShow, setIsShow] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const errorCases = {
     INVALID_CARD_DATA: {
@@ -55,7 +55,7 @@ export default function pageErrors() {
     const { data, success, error, ...rest } = await response.json();
 
     if (error) {
-      setIsShow((prev) => !prev);
+      setIsOpen((prev) => !prev);
       return;
     }
 
@@ -97,7 +97,7 @@ export default function pageErrors() {
 
       if (successPayment) {
         const { status } = dataPay;
-        setIsShow((prev) => !prev);
+        setIsOpen((prev) => !prev);
         console.log(successCases[status]);
       }
     } catch (e) {
@@ -111,23 +111,11 @@ export default function pageErrors() {
       <button onClick={() => submitInformation()}>Send information</button>
 
       <Modal
-        isOpen={isShow}
-        onClose={() => setIsShow(false)}
-        title="¡Error!"
-        // showCloseButton={true} // Se asume true por defecto
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Todo salió bien"
       >
-        <p className="text-red-600 text-lg">
-          Ha ocurrido un problema inesperado. Por favor, intenta de nuevo más
-          tarde.
-        </p>
-        <div className="mt-4 flex justify-end">
-          <button
-            onClick={() => setIsShow(false)}
-            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-          >
-            Entendido
-          </button>
-        </div>
+        <p>Tu acción se completó correctamente.</p>
       </Modal>
     </>
   );
