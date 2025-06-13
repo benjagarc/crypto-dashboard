@@ -12,8 +12,8 @@ export const errorCases = {
     description: "ensure you have the required funds and try again",
   },
   CARD_DECLINED: {
-    title: "insufficient balance Insufficient funds on card",
-    description: "ensure you have the required funds and try again",
+    title: "Card Declined",
+    description: "Your bank has declined this transaction",
   },
 };
 
@@ -22,6 +22,12 @@ export const successCases = {
     title: "Payment requires additional authentication",
     description: "Open link",
   },
-  processing: "Payment is being processed",
-  success: "Payment processed successfull",
+  processing: {
+    title: "Payment is being processed",
+    description: "",
+  },
+  success: {
+    title: "Payment processed successfull",
+    description: "",
+  },
 };
