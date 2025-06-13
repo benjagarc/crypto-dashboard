@@ -1,12 +1,13 @@
 "use client";
 
-import Modal from "@/components/Modal/index";
+import { useModal } from "@/components/context/ModalContext/index";
 import { useState } from "react";
 import { errorCases, successCases } from "./cases";
 import { ErrorCode, SuccesCode } from "./interface";
 
 export default function pageErrors() {
   const [isOpen, setIsOpen] = useState(false);
+  const { showModal } = useModal();
 
   const cardData = {
     cardData: {
@@ -29,14 +30,20 @@ export default function pageErrors() {
     const { data, success, error, ...rest } = await response.json();
 
     if (error) {
-      setIsOpen((prev) => !prev);
+      const code = error.code as ErrorCode;
+      const { title, description } = errorCases[code];
+      showModal({
+        title,
+        content: <p>{description}</p>,
+        variant: "error",
+      });
       return;
     }
 
     const paymentData = {
       orderId: "12345",
       paymentMethod: "card",
-      amount: 27.99,
+      amount: 999.99,
       tipAmount: 0.0,
       cardToken: data.token,
       last4: data.last4,
@@ -64,13 +71,23 @@ export default function pageErrors() {
 
       if (!response2.ok) {
         const code = errorPayment.code as ErrorCode;
-        console.log("error response*****************", errorCases[code]);
+        const { title, description } = errorCases[code];
+        showModal({
+          title,
+          content: <p>{description}</p>,
+          variant: "error",
+        });
       }
 
       if (successPayment) {
         const { status } = dataPay;
         const code = status as SuccesCode;
-        setIsOpen((prev) => !prev);
+        const { title, description } = successCases[code];
+        showModal({
+          title,
+          content: <p>{description}</p>,
+          variant: status === "processing" ? "warning" : "success",
+        });
       }
     } catch (e) {
       console.log(e, "error handle*********************");
@@ -81,14 +98,6 @@ export default function pageErrors() {
     <>
       <h1>Error</h1>
       <button onClick={() => submitInformation()}>Send information</button>
-
-      <Modal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        title="Todo salió bien"
-      >
-        <p>Tu acción se completó correctamente.</p>
-      </Modal>
     </>
   );
 }
