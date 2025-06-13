@@ -2,7 +2,7 @@ export interface ModalState {
   isOpen: boolean;
   title: string;
   content: React.ReactNode;
-  variant: "default" | "success" | "warning" | "error";
+  variant: "default" | "success" | "warning" | "error" | "process";
 }
 
 export interface ModalContextType {

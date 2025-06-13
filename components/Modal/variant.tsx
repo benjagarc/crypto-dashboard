@@ -27,4 +27,11 @@ export const variantStyles = {
     iconBg: "bg-red-500 text-white",
     animation: "animate-error",
   },
+  process: {
+    icon: (
+      <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
+    ),
+    iconBg: "",
+    animation: "animate-fade",
+  },
 };

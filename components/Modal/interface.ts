@@ -5,5 +5,5 @@ export interface ModalProps {
   children: React.ReactNode;
   showCloseButton?: boolean;
   disableOverlayClick?: boolean;
-  variant?: "default" | "success" | "warning" | "error";
+  variant?: "default" | "success" | "warning" | "error" | "process";
 }
